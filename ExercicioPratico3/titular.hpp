@@ -10,6 +10,7 @@ class Titular{
         string nome;
         int long long cpf;
     public:
+        Titular(string nome, int long long cpf) : nome(nome), cpf(cpf) {}
         void setNome(string nome);
         void setCpf(int long long cpf);
 

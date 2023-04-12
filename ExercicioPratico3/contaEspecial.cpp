@@ -1,9 +1,9 @@
 #include"contaEspecial.hpp"
 
-float contaEspecial::getLimite(){
-    return limite;
+void contaEspecial::setLimite(float limite){
+    this->limite = limite;
 }
 
-float saque(float valor){
-    //função
+float contaEspecial::getLimite(){
+    return limite;
 }

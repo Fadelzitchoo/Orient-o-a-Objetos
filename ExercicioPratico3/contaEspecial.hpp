@@ -7,10 +7,10 @@ class contaEspecial : public contaBancaria{
     private:
         float limite;
     public:
-        contaEspecial(float l, float saldo) : contaBancaria(saldo) {
-            limite = l;
-        }
-        float getLimite();                                              //Saber o limite da conta, o set do limite é apenas durante a construção
+        contaEspecial(Titular titular, int numeroConta, float saldo, float limite) : contaBancaria(titular, numeroConta, saldo), limite(limite) {}
+
+        void setLimite(float limite);
+        float getLimite();                                              
         float saque(float valor);
 };
 

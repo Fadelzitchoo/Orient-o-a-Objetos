@@ -10,10 +10,14 @@ class contaBancaria{
     private:
         Titular titular;
         float saldo;
+        int numeroConta;
     public:
-        contaBancaria(int s) : saldo(s) {}
+        contaBancaria(string nome, long long int cpf, int numeroConta, float saldo);
         void setTitular(string nome);
         string getTitular();
+
+        void setNumeroConta(int numero);
+        int getNumeroConta();
 
         void deposito(float valor);                             //Se considera este o "SetSaldo" da classe 
         float getSaldo();                                       //Visualiza o saldo da conta
