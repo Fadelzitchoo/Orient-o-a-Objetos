@@ -8,6 +8,7 @@ class contaSimples : public contaBancaria{
 
     public:
         contaSimples(Titular titular, int numeroConta, float saldo);
+        float pix(float valor);
         bool saque(float valor);                                      
 
 };

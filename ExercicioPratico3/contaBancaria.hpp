@@ -23,7 +23,8 @@ class contaBancaria{
         void deposito(float valor);                             //Se considera este o "SetSaldo" da classe 
         void setSaldo(float valor);
         float getSaldo();                                       //Visualiza o saldo da conta
-
+    
+        virtual float pix(float valor) = 0;
         virtual bool saque(float valor) = 0;
 };
 

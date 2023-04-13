@@ -10,6 +10,7 @@ class contaPoupanca : public contaBancaria{
         contaPoupanca(Titular titular, int numeroConta, float saldo);
         float calcularRendimentoMensal(float saldo);
         static void modificarTaxaDeJuros(float taxaDeJurosAnual);
+        float pix(float valor);
         bool saque(float valor);                                      
 };
 

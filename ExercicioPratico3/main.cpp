@@ -1,32 +1,45 @@
 #include<iostream>
 #include<string>
+#include<vector>
 
-#include"contaBancaria.hpp"
-#include"contaEspecial.hpp"
-#include"contaSimples.hpp"
 #include"contaPoupanca.hpp"
 #include"titular.hpp"
 
 using namespace std;
 
+float contaPoupanca::taxaDejurosAnual = 0.06;
+
 int main(){
-    Titular pessoa1("Felipe Fadel", 11108925944), pessoa2("OutraPessoa", 33308925944), pessoa3("Mais Uma pessoa", 534653453);
+    Titular pessoa1("The Rock", 2304302), pessoa2("Blue Pen", 2304305), pessoa3("Red Pen", 6666666);
 
-    contaSimples conta1(pessoa1, 12, 500);
-    contaEspecial conta2(pessoa2, 13, 1000, 500);
-    contaPoupanca conta3(pessoa3, 14, 1500);
+    contaPoupanca poupador1(pessoa1, 12, 2000);
+    contaPoupanca poupador2(pessoa2, 13, 3000);
 
-    cout << "Numero Da conta: " << conta1.getNumeroConta() << endl;
+    vector<contaPoupanca> poupador3;                                                                        //Poupador 3 possuira 2 contas, uma para deixar o dinheiro guardado
 
-    cout << "Saldo: " << conta1.getSaldo() << endl;
-    conta1.saque(500);
-    cout << "Saldo: " << conta1.getSaldo() << endl;    
+    contaPoupanca conta1(pessoa3, 14, 100);
+    contaPoupanca conta2(pessoa3, 15, 200000);                                                              //Possui 200 reais, limite 1000 reais
 
-    cout << "Numero Da conta: " << conta2.getNumeroConta() << endl;
+    poupador3.push_back(conta1);
+    poupador3.push_back(conta2);
 
-    cout << "Saldo: " << conta2.getSaldo() << endl;
-    conta2.saque(1600);
-    cout << "Saldo: " << conta2.getSaldo() << endl;    
+    cout << "Foi colocado na conta do poupador 1: " << poupador1.getSaldo() << endl;
+    cout << "Foi colocado na conta do poupador 2: " << poupador2.getSaldo() << "\n" << endl;
         
+    poupador1.setSaldo(poupador1.getSaldo() + poupador1.calcularRendimentoMensal(poupador1.getSaldo()));
+    poupador2.setSaldo(poupador2.getSaldo() + poupador2.calcularRendimentoMensal(poupador2.getSaldo()));
+
+    cout << "A conta do Poupador 1 possui no mes 1: " << poupador1.getSaldo() << endl;
+    cout << "A conta do Poupador 2 possui no mes 1: " << poupador2.getSaldo() << "\n" << endl;
+
+    contaPoupanca::modificarTaxaDeJuros(0.08);
+
+    poupador1.setSaldo(poupador1.getSaldo() + poupador1.calcularRendimentoMensal(poupador1.getSaldo()));
+    poupador2.setSaldo(poupador2.getSaldo() + poupador2.calcularRendimentoMensal(poupador2.getSaldo()));
+
+    cout << "A conta do Poupador 1 possui no mes 2: " << poupador1.getSaldo() << endl;
+    cout << "A conta do Poupador 2 possui no mes 2: " << poupador2.getSaldo() << "\n" << endl;
+
+
     return 0;
 }

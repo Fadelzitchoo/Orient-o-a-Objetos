@@ -2,6 +2,15 @@
 
 contaEspecial::contaEspecial(Titular titular, int numeroConta, float saldo, float limite) : contaBancaria(titular, numeroConta, saldo), limite(limite) {}
 
+float contaEspecial::pix(float valor){                                                                                         
+    if(valor <= getSaldo()){
+        float novoSaldo = getSaldo() - valor;
+        setSaldo(novoSaldo);
+        return valor; 
+    }else
+        return 0;
+}
+
 bool contaEspecial::saque(float valor){
     if(valor <= getSaldo() + limite){
         int saldoNovo = getSaldo() - valor;

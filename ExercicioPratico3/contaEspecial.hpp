@@ -11,6 +11,7 @@ class contaEspecial : public contaBancaria{
 
         void setLimite(float limite);
         float getLimite();        
+        float pix(float valor);
         bool saque(float valor);                                      
 };
 
