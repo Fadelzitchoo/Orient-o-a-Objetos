@@ -7,11 +7,11 @@ class contaEspecial : public contaBancaria{
     private:
         float limite;
     public:
-        contaEspecial(Titular titular, int numeroConta, float saldo, float limite) : contaBancaria(titular, numeroConta, saldo), limite(limite) {}
+        contaEspecial(Titular titular, int numeroConta, float saldo, float limite);
 
         void setLimite(float limite);
-        float getLimite();                                              
-        float saque(float valor);
+        float getLimite();        
+        bool saque(float valor);                                      
 };
 
 

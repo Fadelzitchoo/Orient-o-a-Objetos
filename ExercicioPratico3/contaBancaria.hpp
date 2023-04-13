@@ -12,18 +12,19 @@ class contaBancaria{
         float saldo;
         int numeroConta;
     public:
-        contaBancaria(string nome, long long int cpf, int numeroConta, float saldo);
-        void setTitular(string nome);
-        string getTitular();
+        contaBancaria(Titular titular, int numeroConta, float saldo);
+
+        void setTitular(Titular titular);
+        Titular getTitular();
 
         void setNumeroConta(int numero);
         int getNumeroConta();
 
         void deposito(float valor);                             //Se considera este o "SetSaldo" da classe 
+        void setSaldo(float valor);
         float getSaldo();                                       //Visualiza o saldo da conta
 
-        virtual float saque(float valor) = 0;                               //Parecido com o getSaldo, mas o saque retira da conta o valor
-
+        virtual bool saque(float valor) = 0;
 };
 
 #endif  

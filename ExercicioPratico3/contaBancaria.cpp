@@ -1,17 +1,13 @@
 #include"contaBancaria.hpp"
 
-contaBancaria::contaBancaria(std::string nome, long long int cpf, int numeroConta, float saldo){
-    this->titular = titular(nome, cpf);
-    this->numeroConta = numeroConta;
-    this->saldo = saldo;
+contaBancaria::contaBancaria(Titular titular, int numeroConta, float saldo) : titular(titular), numeroConta(numeroConta), saldo(saldo) {}
+
+void contaBancaria::setTitular(Titular titular){              
+    this->titular = titular;
 }
 
-void contaBancaria::setTitular(std::string nome){              
-    titular.setNome(nome);
-}
-
-std::string contaBancaria::getTitular(){
-    return titular.getNome();
+Titular contaBancaria::getTitular(){
+    return titular;
 }
 
 void contaBancaria::setNumeroConta(int numero){
@@ -26,14 +22,10 @@ void contaBancaria::deposito(float valor){
     saldo = saldo + valor;
 }
 
-float contaBancaria::getSaldo(){
-    return saldo;
+void contaBancaria::setSaldo(float valor){
+    saldo = valor;
 }
 
-float contaBancaria::saque(float valor) {
-    if (valor <= saldo) {
-        saldo -= valor;                                             //sobrecarga
-        return saldo;
-    }
-    return -1;
+float contaBancaria::getSaldo(){
+    return saldo;
 }
