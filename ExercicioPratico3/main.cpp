@@ -10,7 +10,9 @@ using namespace std;
 float contaPoupanca::taxaDejurosAnual = 0.06;
 
 int main(){
-    Titular pessoa1("The Rock", 2304302), pessoa2("Blue Pen", 2304305), pessoa3("Red Pen", 6666666);
+    Titular pessoa1("The Rock", 2304302), pessoa2("Blue Pen", 2304305), pessoa3("Red Pen", 6666666);        //3 Titulares
+
+    pessoa1 = pessoa1 + "tHE rOCK";                                                                         //Esse operador concatena novos nomes a os titulares
 
     contaPoupanca poupador1(pessoa1, 12, 2000);
     contaPoupanca poupador2(pessoa2, 13, 3000);
@@ -40,6 +42,13 @@ int main(){
     cout << "A conta do Poupador 1 possui no mes 2: " << poupador1.getSaldo() << endl;
     cout << "A conta do Poupador 2 possui no mes 2: " << poupador2.getSaldo() << "\n" << endl;
 
+    poupador1.~contaPoupanca();
+    poupador2.~contaPoupanca();
 
+    for (int i = 0; i < 1; i++)
+    {
+        poupador3.at(i).~contaPoupanca();
+    }
+    
     return 0;
 }

@@ -14,6 +14,8 @@ class Titular{
         void setNome(string nome);
         void setCpf(int long long cpf);
 
+        Titular operator+(const string& pessoa);
+
         string getNome();
         int long long getCpf();
 };

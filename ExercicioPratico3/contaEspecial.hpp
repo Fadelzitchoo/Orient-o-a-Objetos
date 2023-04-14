@@ -2,6 +2,7 @@
 #define CONTAESPECIAL_HPP
 
 #include"contaBancaria.hpp"
+#include<string>
 
 class contaEspecial : public contaBancaria{
     private:

@@ -29,3 +29,7 @@ bool contaPoupanca::saque(float valor){
     }else
         return false;
 }
+
+contaPoupanca::~contaPoupanca(){
+    setSaldo(0);                                                                                                    //Quando a conta é desativada o dinheiro acaba some, >:( 
+}
