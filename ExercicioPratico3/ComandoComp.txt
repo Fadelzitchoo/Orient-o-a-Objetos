@@ -1,1 +1,0 @@
-g++ main.cpp contaBancaria.cpp contaEspecial.cpp titular.cpp contaSimples.cpp contaPoupanca.cpp
